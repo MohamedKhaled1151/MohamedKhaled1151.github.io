@@ -1304,3 +1304,52 @@ body.menu-open .mobile-menu-backdrop {
     transform: none !important;
   }
 }
+
+/* ========================================================================== 
+   ANIMATIONS & UTILITIES 
+========================================================================== */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  transition-delay: var(--stagger-delay, 0ms);
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.highlight-email {
+  color: var(--accent) !important;
+  font-weight: 700;
+  transition: all var(--transition-medium);
+  display: inline-block;
+}
+
+.highlight-email:hover {
+  text-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+  transform: scale(1.05);
+}
+
+.demo-status i {
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+.footer-repo-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.footer-repo-link a {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-repo-link a:hover {
+  color: var(--accent);
+}
