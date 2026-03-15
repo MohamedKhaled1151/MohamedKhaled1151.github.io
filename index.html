@@ -21,50 +21,54 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary Navigation">
         <div class="logo">
             <a href="#home">MK.</a>
         </div>
         <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#content" class="nav-link">Content</a>
+            <a href="#cv" class="nav-link">CV</a>
             <a href="#contact" class="btn-outline nav-link nav-cta">Contact</a>
         </div>
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Open navigation menu" aria-expanded="false" role="button" tabindex="0">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
+        <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#content" class="nav-link">Content</a>
+        <a href="#cv" class="nav-link">CV</a>
         <a href="#contact" class="nav-link">Contact</a>
     </div>
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content fade-in">
-            <p class="greeting">Hi, my name is</p>
             <h1 class="name">Mohamed Khaled</h1>
             <h2 class="title">Flutter & Software Developer</h2>
-            <p class="title-subtext">Programming Content Creator</p>
-            <p class="subtitle">Building scalable mobile applications and sharing programming knowledge.</p>
+            <h3 class="title-subtext">Programming Content Creator</h3>
+            <p class="subtitle">Building scalable mobile applications and sharing programming knowledge to empower the developer community.</p>
             <div class="hero-btns">
-                <a href="#projects" class="btn-primary">View My Work</a>
-                <a href="https://drive.google.com/file/d/1Rfr_zprPYuib4jqrrFfItQT4LqiflnSE/view" target="_blank" rel="noopener noreferrer" class="btn-outline flex-btn download-cv-btn"><i class="fas fa-file-download"></i> Download CV</a>
-                <a href="#contact" class="btn-secondary">Get in Touch</a>
+                <a href="#projects" class="btn-primary"><i class="fas fa-briefcase"></i> View My Work</a>
+                <a href="Mohamed Khaled.CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary download-cv-btn"><i class="fas fa-file-download"></i> Download CV</a>
+                <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
             </div>
         </div>
         <div class="hero-image fade-in delay-1">
             <div class="img-wrapper">
                 <img src="https://github.com/MohamedKhaled1151.png" alt="Mohamed Khaled Profile">
                 <div class="img-glow"></div>
-                <div class="img-backdrop"></div>
+                <div class="img-frame"></div>
             </div>
         </div>
     </section>
@@ -73,52 +77,56 @@
     <section id="about" class="about section-padding">
         <h2 class="section-title fade-in-scroll"><span>01.</span> About Me</h2>
         <div class="about-content fade-in-scroll">
-            <div class="about-text glass-card about-card">
-                <p>Hello! I'm <strong>Mohamed Khaled</strong>, a Flutter developer and Computer Science student
-                    passionate about building scalable and high-quality mobile applications using Flutter and modern
-                    software architecture such as Clean Architecture and MVVM.</p>
-                <p>I also create programming content to help developers learn mobile development and software
-                    engineering concepts.</p>
-                <p>I'm currently based in <strong>Cairo, Egypt</strong>.</p>
+            <div class="about-card glass-card">
+                <p>Hello! I'm <strong>Mohamed Khaled</strong>, a dedicated Flutter developer and Computer Science student with a passion for crafting high-performance, scalable mobile applications. I specialize in modern software architecture, focusing on <strong>Clean Architecture</strong> and <strong>MVVM</strong> to build maintainable and robust codebases.</p>
+                <p>Beyond development, I'm an active programming content creator, sharing insights on mobile development and software engineering to support and inspire fellow developers.</p>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 8px;"></i> Currently based in <strong>Cairo, Egypt</strong>.</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills section-padding">
-        <h2 class="section-title fade-in-scroll"><span>02.</span> My Skills</h2>
+        <h2 class="section-title fade-in-scroll"><span>02.</span> Technical Skills</h2>
         <div class="skills-groups fade-in-scroll">
             <article class="skill-group glass-card">
-                <h3 class="skill-group-title"><i class="fas fa-code"></i> Languages</h3>
+                <h3 class="skill-group-title"><i class="fas fa-laptop-code"></i> Frontend & Core</h3>
                 <div class="skills-grid">
-                    <div class="skill-badge"><i class="fas fa-code"></i> Dart</div>
+                    <div class="skill-badge"><i class="fab fa-google"></i> Flutter</div>
+                    <div class="skill-badge"><i class="fas fa-bolt"></i> Dart</div>
                 </div>
             </article>
             <article class="skill-group glass-card">
-                <h3 class="skill-group-title"><i class="fas fa-cubes"></i> State Management</h3>
+                <h3 class="skill-group-title"><i class="fas fa-brain"></i> State Management</h3>
                 <div class="skills-grid">
-                    <div class="skill-badge"><i class="fas fa-cubes"></i> BLoC</div>
+                    <div class="skill-badge"><i class="fas fa-project-diagram"></i> BLoC</div>
+                    <div class="skill-badge"><i class="fas fa-sitemap"></i> Provider</div>
+                    <div class="skill-badge"><i class="fas fa-stream"></i> Cubit</div>
                 </div>
             </article>
             <article class="skill-group glass-card">
-                <h3 class="skill-group-title"><i class="fas fa-sitemap"></i> Architecture</h3>
+                <h3 class="skill-group-title"><i class="fas fa-layer-group"></i> Architecture</h3>
                 <div class="skills-grid">
-                    <div class="skill-badge"><i class="fas fa-sitemap"></i> Clean Architecture</div>
-                    <div class="skill-badge"><i class="fas fa-project-diagram"></i> MVVM</div>
+                    <div class="skill-badge"><i class="fas fa-shield-alt"></i> Clean Architecture</div>
+                    <div class="skill-badge"><i class="fas fa-cube"></i> MVVM</div>
+                    <div class="skill-badge"><i class="fas fa-code-branch"></i> SOLID Principles</div>
                 </div>
             </article>
             <article class="skill-group glass-card">
-                <h3 class="skill-group-title"><i class="fas fa-server"></i> Backend</h3>
+                <h3 class="skill-group-title"><i class="fas fa-database"></i> Backend & API</h3>
                 <div class="skills-grid">
                     <div class="skill-badge"><i class="fas fa-fire"></i> Firebase</div>
-                    <div class="skill-badge"><i class="fas fa-network-wired"></i> REST APIs</div>
+                    <div class="skill-badge"><i class="fas fa-plug"></i> RESTful APIs</div>
+                    <div class="skill-badge"><i class="fas fa-cloud"></i> Supabase</div>
                 </div>
             </article>
             <article class="skill-group glass-card">
-                <h3 class="skill-group-title"><i class="fas fa-toolbox"></i> Tools</h3>
+                <h3 class="skill-group-title"><i class="fas fa-tools"></i> Development Tools</h3>
                 <div class="skills-grid">
-                    <div class="skill-badge"><i class="fas fa-layer-group"></i> Flutter</div>
-                    <div class="skill-badge"><i class="fab fa-github"></i> Git & GitHub</div>
+                    <div class="skill-badge"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="skill-badge"><i class="fab fa-github"></i> GitHub</div>
+                    <div class="skill-badge"><i class="fas fa-terminal"></i> VS Code</div>
+                    <div class="skill-badge"><i class="fas fa-vial"></i> Unit Testing</div>
                 </div>
             </article>
         </div>
@@ -126,69 +134,72 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects section-padding">
-        <h2 class="section-title fade-in-scroll"><span>03.</span> Featured Projects</h2>
+        <h2 class="section-title fade-in-scroll"><span>03.</span> Featured Work</h2>
         <div class="projects-grid">
-
-            <div class="project-card fade-in-scroll">
+            <!-- Project 1 -->
+            <div class="project-card featured fade-in-scroll">
                 <div class="project-header">
-                    <i class="far fa-folder-open folder-icon"></i>
-                    <span class="project-label">Featured</span>
+                    <i class="fas fa-folder project-folder-icon"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/MohamedKhaled1151/AL-HIRAFI" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Live Demo" class="disabled"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
                 <h3 class="project-title">AL HIRAFI</h3>
-                <p class="project-desc">Service Marketplace App. Flutter marketplace application built using BLoC
-                    architecture with Firebase Authentication, Firestore, and Storage. Includes Google Maps integration.
-                </p>
+                <p class="project-desc">A professional service marketplace app built with <strong>Clean Architecture</strong>. It connects users with skilled professionals using real-time location and secure authentication.</p>
                 <div class="project-tech">
-                    <span>Flutter</span>
-                    <span>BLoC</span>
-                    <span>Firebase</span>
-                    <span>Clean Architecture</span>
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">BLoC</span>
+                    <span class="tech-badge">Firebase</span>
+                    <span class="tech-badge">Google Maps</span>
                 </div>
-                <div class="project-actions">
-                    <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-                    <span class="project-btn project-btn-disabled"><i class="fas fa-globe"></i> Live Demo Soon</span>
+                <div class="project-footer">
+                    <a href="https://github.com/MohamedKhaled1151/AL-HIRAFI" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">Source Code</a>
+                    <span class="demo-status"><i class="fas fa-clock"></i> Alpha Version</span>
                 </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="project-card fade-in-scroll">
                 <div class="project-header">
-                    <i class="far fa-folder-open folder-icon"></i>
-                    <span class="project-label">Mobile App</span>
+                    <i class="fas fa-folder project-folder-icon"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Live Demo" class="disabled"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
                 <h3 class="project-title">Fashion Store</h3>
-                <p class="project-desc">E-commerce mobile application with product browsing and search functionality
-                    built using Flutter and MVVM architecture.</p>
+                <p class="project-desc">A modern E-commerce solution with a focus on immersive UI/UX. Features include product filtering, smooth cart management, and seamless checkout flow.</p>
                 <div class="project-tech">
-                    <span>Flutter</span>
-                    <span>MVVM</span>
-                    <span>E-commerce</span>
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">MVVM</span>
+                    <span class="tech-badge">Provider</span>
                 </div>
-                <div class="project-actions">
-                    <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-                    <span class="project-btn project-btn-disabled"><i class="fas fa-globe"></i> Live Demo Soon</span>
+                <div class="project-footer">
+                    <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" class="btn-sm btn-outline">GitHub</a>
                 </div>
             </div>
 
+            <!-- Project 3 -->
             <div class="project-card fade-in-scroll">
                 <div class="project-header">
-                    <i class="far fa-folder-open folder-icon"></i>
-                    <span class="project-label">Bookstore</span>
+                    <i class="fas fa-folder project-folder-icon"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Live Demo" class="disabled"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
                 <h3 class="project-title">Bookai Store</h3>
-                <p class="project-desc">A Flutter bookstore application built using Clean Architecture, BLoC state
-                    management, Firebase services, and REST API integration.</p>
+                <p class="project-desc">An AI-powered bookstore exploration app. Integrates with various book APIs to provide personalized recommendations and real-time availability tracking.</p>
                 <div class="project-tech">
-                    <span>Flutter</span>
-                    <span>BLoC</span>
-                    <span>REST API</span>
-                    <span>Clean Arch</span>
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">REST API</span>
+                    <span class="tech-badge">Hive</span>
                 </div>
-                <div class="project-actions">
-                    <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fab fa-github"></i> GitHub</a>
-                    <span class="project-btn project-btn-disabled"><i class="fas fa-globe"></i> Live Demo Soon</span>
+                <div class="project-footer">
+                    <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" class="btn-sm btn-outline">GitHub</a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -197,39 +208,48 @@
         <div class="split-layout">
             <div class="content-creation fade-in-scroll">
                 <h2 class="section-title fade-in-scroll"><span>04.</span> Content Creation</h2>
-                <p class="content-intro">I also create programming content to help developers learn and grow. Be sure to follow my social media for the latest updates!</p>
+                <p class="content-intro">I'm passionate about sharing knowledge and contributing to the developer community. Join me on social media for the latest tutorials and tips!</p>
+                
                 <div class="content-cards-grid">
                     <div class="glass-card content-card">
-                        <i class="fas fa-mobile-alt content-card-icon"></i>
-                        <div>
-                            <h3 class="content-card-title">Flutter Content</h3>
-                            <p class="content-card-text">UI challenges, architecture, and best practices.</p>
+                        <div class="content-card-header">
+                            <i class="fas fa-mobile-alt content-icon"></i>
                         </div>
+                        <h3 class="content-card-title">Flutter Content</h3>
+                        <p class="content-card-text">Advanced architecture patterns, UI challenges, and production-ready best practices.</p>
                     </div>
+
                     <div class="glass-card content-card">
-                        <i class="fas fa-laptop-code content-card-icon"></i>
-                        <div>
-                            <h3 class="content-card-title">Software Engineering Tips</h3>
-                            <p class="content-card-text">Clean architecture, SOLID principles, and clean code.</p>
+                        <div class="content-card-header">
+                            <i class="fas fa-laptop-code content-icon"></i>
                         </div>
+                        <h3 class="content-card-title">Software Engineering Tips</h3>
+                        <p class="content-card-text">Deep dives into SOLID principles, Clean Architecture, and efficient development workflows.</p>
                     </div>
+
                     <div class="glass-card content-card">
-                        <i class="fas fa-chalkboard-teacher content-card-icon"></i>
-                        <div>
-                            <h3 class="content-card-title">Developer Tutorials</h3>
-                            <p class="content-card-text">Step-by-step guides for building real-world apps.</p>
+                        <div class="content-card-header">
+                            <i class="fas fa-chalkboard-teacher content-icon"></i>
                         </div>
+                        <h3 class="content-card-title">Programming Tutorials</h3>
+                        <p class="content-card-text">Practical, step-by-step guides for building real-world apps with focused learning blocks.</p>
                     </div>
+                </div>
+
+                <div class="follow-cta">
+                    <p>Building something together? <a href="#contact">Let's connect on social media!</a></p>
                 </div>
             </div>
 
             <div class="education fade-in-scroll">
                 <h2 class="section-title fade-in-scroll"><span>05.</span> Education</h2>
-                <div class="card glass-card">
-                    <i class="fas fa-graduation-cap card-icon"></i>
-                    <h3>Higher Institute of Culture and Science</h3>
-                    <h4>Computer Science</h4>
-                    <p class="date"><i class="far fa-calendar-alt"></i> Expected Graduation: 2026</p>
+                <div class="education-card glass-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-info">
+                        <h3>Higher Institute of Culture and Science</h3>
+                        <h4>Bachelor of Computer Science</h4>
+                        <p class="date"><i class="far fa-calendar-alt"></i> Class of 2026 (Expected)</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,61 +257,49 @@
 
     <!-- CV Section -->
     <section id="cv" class="cv-section section-padding fade-in-scroll">
-        <h2 class="section-title center fade-in-scroll"><span>06.</span> Resume</h2>
+        <h2 class="section-title center"><span>06.</span> Resume</h2>
         <div class="cv-container">
-            <div class="cv-card">
-                <i class="far fa-file-pdf cv-icon"></i>
-                <h3>View or download my resume</h3>
-                <p>Learn more about my experience, skills, and academic background.</p>
-                <a href="Mohamed Khaled.CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary flex-btn"
-                    download="Mohamed_Khaled_CV.pdf">
-                    <i class="fas fa-download"></i> Download CV
-                </a>
+            <div class="cv-wrapper glass-card">
+                <div class="cv-content">
+                    <i class="far fa-file-pdf cv-icon"></i>
+                    <h3>Ready to work together?</h3>
+                    <p>Download my full resume to see my detailed experience and technical background.</p>
+                    <a href="Mohamed Khaled.CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary" download="Mohamed_Khaled_CV.pdf">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact & Social Section -->
     <section id="contact" class="contact section-padding fade-in-scroll">
-        <h2 class="section-title center fade-in-scroll"><span>07.</span> Get In Touch</h2>
-        <p class="contact-desc">I'm currently looking for new opportunities as a Flutter Developer. Whether you have a
-            specific project in mind, a job opportunity, or just want to say hi, my inbox is always open!</p>
-        
-        <div class="contact-email">
-            <i class="fas fa-envelope contact-email-icon"></i>
-            <a href="mailto:moohamedkhaled56@gmail.com" class="contact-email-link">moohamedkhaled56@gmail.com</a>
-        </div>
+        <h2 class="section-title center"><span>07.</span> Get In Touch</h2>
+        <div class="contact-card">
+            <p class="contact-desc">I'm always open to new opportunities, collaborations, or just a friendly chat about Flutter and Software Engineering. Whether you have a project idea or a question, feel free to reach out!</p>
+            
+            <div class="contact-email-wrapper">
+                <p class="contact-label">Email me directly</p>
+                <a href="mailto:moohamedkhaled56@gmail.com" class="contact-email highlight-email">
+                    <i class="fas fa-envelope"></i> moohamedkhaled56@gmail.com
+                </a>
+            </div>
 
-        <div class="social-links-large">
-            <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer"
-                aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/mohamedkhaled151" target="_blank" rel="noopener noreferrer"
-                aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/mohamedkhaled1520?igsh=MTZkbGJ2cDgyN3o2Mg==" target="_blank"
-                rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/share/17DoVpFyVu/?mibextid=wwXIfr" target="_blank"
-                rel="noopener noreferrer" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.tiktok.com/@mohamed.khaled725?_r=1&_t=ZS-94fb8QJ8IVR" target="_blank"
-                rel="noopener noreferrer" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
+            <div class="social-links-large">
+                <a href="https://github.com/MohamedKhaled1151" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohamedkhaled151" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/mohamedkhaled1520?igsh=MTZkbGJ2cDgyN3o2Mg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/17DoVpFyVu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@mohamed.khaled725?_r=1&_t=ZS-94fb8QJ8IVR" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
 
-        <a href="mailto:moohamedkhaled56@gmail.com" class="btn-outline giant-btn">Say Hello</a>
+            <a href="mailto:moohamedkhaled56@gmail.com" class="btn-outline giant-btn">Say Hello</a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p>Designed & Built by Mohamed Khaled</p>
-        <p class="footer-role">Flutter Developer | Software Developer</p>
+        <p>Designed & Built by Mohamed Khaled using HTML, CSS & JavaScript.</p>
     </footer>
 
     <!-- Custom JS -->
