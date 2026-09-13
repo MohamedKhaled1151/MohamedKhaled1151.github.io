@@ -244,28 +244,10 @@ if (revealElements.length > 0) {
 // ==========================================================================
 const filterBtns = document.querySelectorAll(".filter-btn");
 const showcaseItems = document.querySelectorAll(".showcase-item");
-
-// Filter functionality
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const filter = btn.dataset.filter;
-
-    filterBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    showcaseItems.forEach((item) => {
-      if (filter === "all" || item.dataset.project === filter) {
-        item.classList.remove("hidden");
-      } else {
-        item.classList.add("hidden");
-      }
-    });
-  });
-});
-
-// Lightbox functionality
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
+const lightboxTitle = document.getElementById("lightbox-title");
+const lightboxDesc = document.getElementById("lightbox-desc");
 const lightboxCounter = document.getElementById("lightbox-counter");
 const lightboxClose = document.querySelector(".lightbox-close");
 const lightboxPrev = document.querySelector(".lightbox-prev");
@@ -280,15 +262,82 @@ const getVisibleItems = () => {
   );
 };
 
-const openLightbox = (index) => {
+const applyFilter = (filter) => {
+  filterBtns.forEach((b) => {
+    b.classList.toggle("active", b.dataset.filter === filter);
+  });
+
+  showcaseItems.forEach((item) => {
+    let isVisible = false;
+    if (filter === "all") {
+      isVisible = true;
+    } else if (filter === "featured") {
+      isVisible = item.dataset.featured === "true";
+    } else {
+      isVisible = item.dataset.project === filter;
+    }
+
+    if (isVisible) {
+      item.classList.remove("hidden");
+    } else {
+      item.classList.add("hidden");
+    }
+  });
+};
+
+// Filter button events
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    applyFilter(btn.dataset.filter);
+  });
+});
+
+// Navigate to specific project in showcase from upper cards
+document.querySelectorAll("[data-showcase-target]").forEach((trigger) => {
+  trigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetProject = trigger.dataset.showcaseTarget;
+    applyFilter(targetProject);
+
+    const showcaseSection = document.getElementById("showcase");
+    if (showcaseSection) {
+      showcaseSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// Initial filter: featured highlights (clean, comfortable, curated 6 cards)
+applyFilter("featured");
+
+// Lightbox logic
+const updateLightboxContent = (index) => {
   visibleImages = getVisibleItems();
   currentLightboxIndex = index;
-  const img = visibleImages[index]?.querySelector("img");
+  const item = visibleImages[index];
+  if (!item) return;
+  const img = item.querySelector("img");
   if (!img) return;
 
   lightboxImg.src = img.src;
   lightboxImg.alt = img.alt;
-  lightboxCounter.textContent = `${index + 1} / ${visibleImages.length}`;
+
+  const titleText = item.querySelector(".showcase-screen-title")?.textContent || img.alt;
+  const descText = item.querySelector(".showcase-screen-desc")?.textContent || "";
+  const badgeText = item.querySelector(".showcase-badge")?.textContent || "";
+
+  if (lightboxTitle) {
+    lightboxTitle.textContent = badgeText ? `${badgeText} — ${titleText}` : titleText;
+  }
+  if (lightboxDesc) {
+    lightboxDesc.textContent = descText;
+  }
+  if (lightboxCounter) {
+    lightboxCounter.textContent = `${index + 1} / ${visibleImages.length}`;
+  }
+};
+
+const openLightbox = (index) => {
+  updateLightboxContent(index);
   lightbox.classList.add("active");
   lightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
@@ -301,26 +350,23 @@ const closeLightbox = () => {
 };
 
 const navigateLightbox = (direction) => {
+  if (visibleImages.length === 0) return;
   currentLightboxIndex =
     (currentLightboxIndex + direction + visibleImages.length) %
     visibleImages.length;
-  const img = visibleImages[currentLightboxIndex]?.querySelector("img");
-  if (!img) return;
 
   lightboxImg.style.opacity = "0";
-  lightboxImg.style.transform = "scale(0.92)";
-  
+  lightboxImg.style.transform = "scale(0.94)";
+
   setTimeout(() => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${visibleImages.length}`;
+    updateLightboxContent(currentLightboxIndex);
     lightboxImg.style.opacity = "1";
     lightboxImg.style.transform = "scale(1)";
-  }, 180);
+  }, 160);
 };
 
-// Event listeners
-showcaseItems.forEach((item, index) => {
+// Item click opens lightbox
+showcaseItems.forEach((item) => {
   item.addEventListener("click", () => {
     const visible = getVisibleItems();
     const visibleIndex = visible.indexOf(item);
