@@ -981,6 +981,8 @@ body.menu-open .mobile-menu-backdrop {
   transition: all var(--transition-medium);
   backdrop-filter: blur(10px);
   overflow: hidden;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .showcase-item:hover {
@@ -991,7 +993,7 @@ body.menu-open .mobile-menu-backdrop {
 }
 
 .showcase-item.hidden {
-  display: none;
+  display: none !important;
 }
 
 .showcase-item.showcase-landscape {

@@ -279,8 +279,13 @@ const applyFilter = (filter) => {
 
     if (isVisible) {
       item.classList.remove("hidden");
+      item.classList.add("visible");
+      item.style.opacity = "1";
+      item.style.visibility = "visible";
     } else {
       item.classList.add("hidden");
+      item.style.opacity = "";
+      item.style.visibility = "";
     }
   });
 };
